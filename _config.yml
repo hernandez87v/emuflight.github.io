@@ -6,7 +6,7 @@ markdown: kramdown
 theme: jekyll-theme-hacker
 exclude: [vendor]
 show_downloads: [true]
-# downloads URLS
-github:
-  zip_url: "https://github.com/emuflight/emuflight.github.io/zipball/gh-pages"
-  another_url: another value
+# downloads URLS to CHANGE if needed
+# github:
+#   zip_url: "https://github.com/emuflight/emuflight.github.io/zipball/gh-pages"
+#   another_url: another value
