@@ -1,6 +1,8 @@
 title: EmuFlight
-description: [A short description of your site's purpose]
+description: [EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!
+]
 url: "https://emuflight.github.io/"
-# markdown: kramdown
+markdown: kramdown
 theme: jekyll-theme-hacker
-# exclude: [vendor]
+exclude: [vendor]
+show_downloads: [true]
