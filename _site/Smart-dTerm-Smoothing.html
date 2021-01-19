@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>init emuflight.github.io | EmuFlight</title>
+<title>EmuFlight | [“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="init emuflight.github.io" />
+<meta property="og:title" content="EmuFlight" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
 <meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/Smart-dTerm-Smoothing.html" />
+<meta property="og:url" content="http://localhost:4000/Smart-dTerm-Smoothing.html" />
 <meta property="og:site_name" content="EmuFlight" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","headline":"init emuflight.github.io","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","name":"EmuFlight","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"http://localhost:4000/Smart-dTerm-Smoothing.html","headline":"EmuFlight","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -43,8 +43,23 @@
 
     <div class="container">
       <section id="main_content">
-        <h1 id="init-emuflightgithubio">init emuflight.github.io</h1>
-<p>EmuFlight</p>
+        <p><code class="language-plaintext highlighter-rouge">smart_dterm_smoothing_[roll|pitch|yaw]</code> is a dTerm minimizer based on how high dTerm is at any given moment.  It will reduce dTerm when it is small, but will allow full dTerm when it is big.  A value of 0 is off.  Default is 5 (0.5%) on Roll and Pitch, 0 on Yaw. Maximum allowed is 250 (25%). Smoothing mathematics does not cause delay.</p>
+
+<p>You may enable debugging with <code class="language-plaintext highlighter-rouge">set debug_mode = SMART_SMOOTHING</code>.</p>
+
+<p>When tuning from scratch, you may turn this off.</p>
+
+<p>Racers may want to turn this off.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set smart_dterm_smoothing_roll = 0
+set smart_dterm_smoothing_pitch = 0
+set smart_dterm_smoothing_yaw = 0
+</code></pre></div></div>
+
+<p>Defaults:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set smart_dterm_smoothing_roll = 5
+set smart_dterm_smoothing_pitch = 5
+set smart_dterm_smoothing_yaw = 0
+</code></pre></div></div>
 
       </section>
     </div>

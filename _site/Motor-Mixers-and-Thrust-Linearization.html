@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Motor Mixers and Thrust Linearization | EmuFlight</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Motor Mixers and Thrust Linearization" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/Motor-Mixers-and-Thrust-Linearization.html" />
+<meta property="og:url" content="http://localhost:4000/Motor-Mixers-and-Thrust-Linearization.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/Motor-Mixers-and-Thrust-Linearization.html","headline":"Motor Mixers and Thrust Linearization","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h2 id="motor-mixers-and--thrust-linearization">Motor Mixers and  Thrust Linearization</h2>
+
+<h3 id="040">0.4.0+</h3>
+<p>The new mixers and linearizations are independent functions but may be used together to provide a preferred fly-style. Code and ideas from Tyler Corleone and QuickFlash.</p>
+
+<h3 id="motor-mixer-notes">Motor Mixer notes:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">LEGACY</code> is the mixer we have always had. (Note: for 100% legacy-mode, <code class="language-plaintext highlighter-rouge">linear_throttle</code> should be <code class="language-plaintext highlighter-rouge">OFF</code> and <code class="language-plaintext highlighter-rouge">linear_thrust_high_output</code> should be <code class="language-plaintext highlighter-rouge">0</code>; However, pilots are welcome to use both Thrust-Linearization and Throttle-Linearization.)</li>
+  <li><code class="language-plaintext highlighter-rouge">SMOOTH</code> is a simple variant that applies smoother transitions to avoid mixer-output clipping.</li>
+  <li><code class="language-plaintext highlighter-rouge">2PASS</code> is a SMOOTH variant that mixes yaw and roll/pitch separately in order to try to guarantee thrust linearity for roll and pitch and motor output linearity (almost RPM linearity) for yaw.</li>
+  <li><code class="language-plaintext highlighter-rouge">mixer_laziness</code> ON/OFF. When ON, requires Thrust-Linearization values configured (<code class="language-plaintext highlighter-rouge">&gt;0</code>). Both SMOOTH and 2PASS can use an option called “laziness” that enables a smarter “clipping prevention” strategy, that is called lazy because it adds only the minimum required amount of offset to remain in the [0, 1] for each “motor group” (that is a group of opposite motors that can actually work in conjunction in order to obtain a certain amount of roll/pitch) instead of applying the biggest needed amount. In this way we avoid to add/increase the total thrust when not needed, obtaining a better “throttle authority”.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># get mixer
+
+mixer_impl = 2PASS
+Allowed values: LEGACY, SMOOTH, 2PASS
+Default value: LEGACY
+
+mixer_laziness = ON
+Allowed values: OFF, ON
+Default value: OFF
+</code></pre></div></div>
+
+<h3 id="thrust-linearization-notes">Thrust Linearization notes:</h3>
+<ul>
+  <li>Two settings: <code class="language-plaintext highlighter-rouge">linear_thrust_low_output</code> for low motor output (low RPM) and <code class="language-plaintext highlighter-rouge">linear_thrust_high_output</code> for high motor output (high RPM). Use this tool to understand what you need to set (65/30 are good starting points for low and high output) https://www.desmos.com/calculator/ofaiocun0b</li>
+  <li>Both values need to be != 0 (not zero) for TL being applied.</li>
+  <li><code class="language-plaintext highlighter-rouge">linear_throttle</code> gives you a linear throttle/thrust feeling. The hovering level will be lower (e.g. what before was 30% now could be 20%). This means that you need to be used to this before you can appreciate its advantages (more room on the upper part of the throttle)</li>
+  <li><a href="https://github.com/emuflight/EmuFlight/wiki/TPA">TPA</a> is automatically disabled when TL is enabled because it already solves high throttle issues.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># get linear
+
+linear_thrust_low_output = 65
+Allowed range: 0 - 100
+
+linear_thrust_high_output = 30
+Allowed range: 0 - 100
+Default value: 0
+
+linear_throttle = ON
+Allowed values: OFF, ON
+Default value: OFF
+</code></pre></div></div>
+
+<p>For more information, please see all notes, graphs and discussions in the Pull Request: https://github.com/emuflight/EmuFlight/pull/398</p>
+
+<p>Suggested starting values for Thrust Linearization:
+| Make/Model  | Size  | TL Low  | TL High |
+|—|—|:—:|:—:|
+| NewBeeDrone Brushed Gold | 19700kv | 70 | 45 |
+| NewBeeDrone Brushed Unicorn | 25500kv | 70 | 45 |
+| Generic  | 1102 | 45 | 30 |
+| DongXingWei | 1103 8000kv | 40 | 25 |
+| Generic | 1105 | 75 | 35 |
+| iFlight Xing | 1202 8000kv | 75 | 35|
+| ZoeFPV | 2010 | 60 | 25 |
+| Proton X | 2204 | 50 | 0 |
+| SunnySky | 2204 | 50 | 0 |
+| RCX V2 | 2205 | 50 | 15 |
+| RCINPower | 2205 | 60 | 15 |
+| ZoeFPV | 2205 | 60 | 5 |
+| iFlight Xing | 2206 | 60 | 30 |
+| T-Motor Blackbird | 2207 | 60 | 15 |
+| Pyrodrone Hyperlite | 2207.5 | 60 | 25 |
+| Flywoo | 2207.5 1860kv | 40 | 20 |
+| FlashHobby Arthur | 2207.5 1900kv | 60 | 30 |
+| Pyrodrone Hyperlite | 2208.5 | 55 | 25 |
+| AmaxInno | 2305 | 63 | 25 |
+| LeDrib | 2306 | 65 | 15 |
+| AmaxInno | 2306 | 65 | 40 |
+| iFlight Xing | 2306 | 75 | 30 |
+| NewBeedrone Flow | 2306.5 | 70 | 30 |
+| T-motor BMS | 2306.5 2000kv | 60 | 29 |
+| Bardwell | 2407 | 65 | 30 |
+| HGLRC FD | 2408 | 70 | 25 |
+| T-Motor F80 | 2408 | 75 | 45 |
+| T-Motor F90 | 2806.5 | 70 | 60 |
+| Emax Eco II | 2807 | 75 | 95 |</p>
+
+<p>* Credit to Ryan Harrel (MiniQuadBenchTest), Ethan Bayer (MicroMotorTest) for the thrust curve data from which these values were derived. Thanks to EmuTestBandits for value recommendations.</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

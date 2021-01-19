@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>init emuflight.github.io | EmuFlight</title>
+<title>EmuFlight | [“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="init emuflight.github.io" />
+<meta property="og:title" content="EmuFlight" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
 <meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/WitchCraft.html" />
+<meta property="og:url" content="http://localhost:4000/WitchCraft.html" />
 <meta property="og:site_name" content="EmuFlight" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","headline":"init emuflight.github.io","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","name":"EmuFlight","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"http://localhost:4000/WitchCraft.html","headline":"EmuFlight","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -43,8 +43,24 @@
 
     <div class="container">
       <section id="main_content">
-        <h1 id="init-emuflightgithubio">init emuflight.github.io</h1>
-<p>EmuFlight</p>
+        <p><code class="language-plaintext highlighter-rouge">witchcraft_[roll|pitch|yaw]</code> smooths dTerm over time. The value is how many pid loop iteration samples are averaged to calculate dTerm. A value of 0 or 1 is effectively off. Default is 2 on Roll and Pitch, 0 on Yaw. Maximum allowed is 10. May cause delay.</p>
+
+<p>WitchCraft has more effect as feathered PIDs are lower and less effect as feathered PIDs are higher.</p>
+
+<p>When tuning from scratch, you may turn this off.</p>
+
+<p>Racers may want to turn this off.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set witchcraft_roll = 0
+set witchcraft_pitch = 0
+set witchcraft_yaw = 0
+</code></pre></div></div>
+
+<p>Defaults:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set witchcraft_roll = 2
+set witchcraft_pitch = 2
+set witchcraft_yaw = 0
+</code></pre></div></div>
 
       </section>
     </div>

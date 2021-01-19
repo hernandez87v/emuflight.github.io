@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>What makes EmuFlight different? | EmuFlight</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="What makes EmuFlight different?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/What-makes-EmuFlight-different?.html" />
+<meta property="og:url" content="http://localhost:4000/What-makes-EmuFlight-different?.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/What-makes-EmuFlight-different?.html","headline":"What makes EmuFlight different?","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3 id="what-makes-emuflight-different">What makes EmuFlight different?</h3>
+<p>EmuFlight is a fork of ButterFlight that has had many additions making it worthy of attention. Most notably is the addition of the Helio IMUF filtering on all flight controllers. With EmuFlight being a fork of ButterFlight, EmuFlight is quite similar to betaflight 3.5 except with many improvements making the switch to EmuFlight very worthwhile.</p>
+
+<p><strong>What features does EmuFlight have that Betaflight does not?</strong></p>
+<ul>
+  <li>Feathered PIDs (previously Buttered PIDs, calculating the dterm using measurement which is smoother)</li>
+  <li>IMUF filtering on all flight controllers</li>
+  <li>i_decay (unique way of handling iTerm building during quick moves)</li>
+  <li>EmuBoost and BoostLimit (creates an enhanced nonlinear pid controller (better noise handling when tuned) changes stick feel more organically than feedforward)</li>
+  <li>EmuFlight uses different methods to calculate dTerm filtering than Betaflight (tuning dTerm and dTerm filters remains easier than before)</li>
+  <li>GPS has been updated to allow for a sort of geofencing to make flying in French regions legal</li>
+  <li>TPA is split into kP, kI and kD</li>
+  <li>TPA can be a boosting factor now. Especially useful in conjunction with the iTerm</li>
+  <li>AKK VTX hack on each build (no longer the need to download a special branch for this!)</li>
+</ul>
+
+<p><strong>New in the 0.2.0-RC1 Milestone</strong></p>
+<ul>
+  <li>Dropped F3 support</li>
+  <li>Community provided preset-tunes in the Configurator</li>
+  <li>Fixes to the IMUF filter for non-Helio FC</li>
+  <li>Updates to the IMUF filter for Helio FC New IMUF version 211, 213</li>
+  <li>NFE RacerMode (NotFastEnuf racermode is Angle-mode on roll axis only)</li>
+  <li>Cinematic Yaw (Whoop feature mixes roll and yaw based on pitch angle)</li>
+  <li>Changes to Feathered PIDS (Feathered PIDs now variable 0% to 100% and works with FeedForward)</li>
+  <li>Motor Output Limit</li>
+  <li>Stick Position Attenuation AKA SPA Rate (Similar to TPA but based on stick deflection instead of throttle)</li>
+  <li>Helio FC now have full use of the dynamic notch filter</li>
+  <li>Support for JESC Configurator</li>
+  <li>Ability to set the LPF filter for voltage and current (can now have quicker updating voltage readings)</li>
+  <li>Fixed yaw PIDsum limit</li>
+  <li>Improved telemetry causing PIDloop jitters</li>
+  <li>Dynamic Gyro LPF and Dynamic dTerm LPF (still experimental)</li>
+  <li>EmuBoost split into Pitch/Roll and Yaw (tune EmuBoost separately for yaw)</li>
+</ul>
+
+<p><strong>New in 0.3.X</strong> (and some 0.2.XX dev versions)</p>
+<ul>
+  <li><a href="https://github.com/emuflight/EmuFlight/wiki/smart-dTerm-smoothing">Smart_dTerm_Smoothing</a> (Decreases d near small d values. The higher you run smart_dterm_smoothing the more it will attenuate low dTerm values and it will also start attenuating larger dterm values. It smooths dterm by comparing the average of the last two dTerm readings and shrinks dTerm more near small values. <code class="language-plaintext highlighter-rouge">50</code>=5% as seen in blackbox logs. Because of how this works it can essentially be used as a form of Dmin, removing the annoyance of dterm noise when the quad is hovering while still giving you access to the full dTerm effect to help during quick movements or propwash.)</li>
+  <li><a href="https://github.com/emuflight/EmuFlight/wiki/WitchCraft">WitchCraft</a> (Smooths dTerm over time; it may help remove bobble when D acts before P. It averages the last <em><code class="language-plaintext highlighter-rouge">x</code></em> samples of DTerm.)</li>
+  <li>Full PID controller for <a href="https://github.com/emuflight/EmuFlight/wiki/Angle-and-NFE-Racer-modes">Angle and NFE-Racer modes</a> very similar to the angle controller in silverware (Previously P-only) (Now, technically P&amp;D, no I)</li>
+  <li>Removal of unnecessary Dynamic LPF’s</li>
+  <li>SPA per axis</li>
+  <li>Gyro and dTerm LPF’s per axis</li>
+  <li><code class="language-plaintext highlighter-rouge">sharpness</code> for both Helio IMUF and and non-Helio flight controllers</li>
+  <li>rateDynamics</li>
+  <li>vbat compensation</li>
+  <li>turtle-mode motor power adjustment</li>
+  <li>iDecay v2 (0.3.2+)</li>
+  <li>DBoost (0.3.2+)</li>
+  <li>Simplified iTerm Relax (0.3.2+)</li>
+  <li>CRSF LQ display</li>
+</ul>
+
+<p><strong>0.3.3+</strong></p>
+<ul>
+  <li><a href="https://github.com/emuflight/EmuFlight/wiki/Angle-and-NFE-Racer-modes#mix-roll-and-yaw">Mix Roll and Yaw</a> (a.k.a Dual Axis Steering)</li>
+  <li>NFE on an aux-mode switch.</li>
+  <li><code class="language-plaintext highlighter-rouge">set show_altered_rc = ON</code> in order to see what your RC looks like (in Configurator).</li>
+  <li>Make rateDynamics feel the same irregardless of RX rate</li>
+  <li>Immersion RC Ghost protocol</li>
+  <li><a href="https://github.com/emuflight/EmuFlight/wiki/VTX-Power-on-switch">VTX power on an aux-mode switch</a> (CLI only)</li>
+  <li>Ability to turn off Kalman prediction, but why would you want to? <code class="language-plaintext highlighter-rouge">set imuf_w = </code> &lt;= <code class="language-plaintext highlighter-rouge">2</code> to see why Kalman is better.</li>
+  <li>LQ widget style selection in OSD.</li>
+  <li>Added CRSF style <code class="language-plaintext highlighter-rouge">SCALE</code> for 170-300, and <code class="language-plaintext highlighter-rouge">SIMPLE</code> for 0-100 (a.k.a <code class="language-plaintext highlighter-rouge">100 for Days</code>)</li>
+  <li>Backports of many enhancements, please check release notes.</li>
+</ul>
+
+<p><strong>0.4.0+</strong> (not yet released)</p>
+<ul>
+  <li>Optional features: New Motor Mixer, Thrust Linearization and Throttle Linearization.</li>
+</ul>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

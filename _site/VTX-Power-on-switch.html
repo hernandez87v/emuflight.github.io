@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>VTX Power on an aux-mode switch | EmuFlight</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="VTX Power on an aux-mode switch" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/VTX-Power-on-switch.html" />
+<meta property="og:url" content="http://localhost:4000/VTX-Power-on-switch.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/VTX-Power-on-switch.html","headline":"VTX Power on an aux-mode switch","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h2 id="vtx-power-on-an-aux-mode-switch">VTX Power on an aux-mode switch</h2>
+
+<p>New in 0.3.3+, Adds an option to change vtx power with an aux channel.
+ More info on usage: https://github.com/betaflight/betaflight/wiki/VTX-CLI-Settings</p>
+
+<p>Example cli settings:</p>
+
+<p>6-Position example on AUX6:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vtx 0 7 5 1 0 900 1100
+vtx 1 7 5 2 0 1100 1300
+vtx 2 7 5 3 0 1300 1500
+vtx 3 7 5 4 0 1500 1700
+vtx 4 7 5 6 0 1700 1900
+vtx 5 7 5 8 0 1900 2100
+</code></pre></div></div>
+
+<p>2-Position example on AUX7:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vtx 6 6 0 0 1 900 1200
+vtx 7 6 0 0 2 1800 2100
+</code></pre></div></div>
+
+<p>The above 2-Position example uses AUX7 ( channels are zero indexed, change to whatever channel number you have set up on the radio minus 1) and will switch between power modes 1 and 2 when aux-mode switch is within related ranges.</p>
+
+<p>Easiest way to tell is to enable the VTX OSD element. You will see power change in the OSD. Make sure you have armed the quad once (to make sure you are not in lowpower disarm mode)
+Note:</p>
+
+<p>For Smart audio, the power levels are hardcoded in EmuFlight 0.X.Y as:</p>
+<ul>
+  <li>1: 25mw</li>
+  <li>2: 200mw</li>
+  <li>3: 800mw</li>
+</ul>
+
+<p><strong><em>Make sure not to use more than the vtx allows.</em></strong></p>
+
+<p>[Unsure if this applies to Tramp; power-levels are preset in the vtx itself.]</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

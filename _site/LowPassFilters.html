@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Low-Pass Filter (LPF) tuning is a must! | EmuFlight</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Low-Pass Filter (LPF) tuning is a must!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/LowPassFilters.html" />
+<meta property="og:url" content="http://localhost:4000/LowPassFilters.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/LowPassFilters.html","headline":"Low-Pass Filter (LPF) tuning is a must!","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3 id="low-pass-filter-lpf-tuning-is-a-must">Low-Pass Filter (LPF) tuning is a must!</h3>
+<ul>
+  <li>Over-filtering can cause problems.</li>
+  <li>Under-filtering can cause problems.</li>
+  <li>EmuFlight stock defaults are fair for a 5” standard-frame quadcopter, but generally over-filter.</li>
+  <li>The goal of filter tuning is to have a quad-specific tune that is neither over-filtered nor under-filtered.</li>
+</ul>
+
+<h3 id="should-i-use-a-pt1-or-biquad">Should I use a PT1 or BIQUAD?</h3>
+<ul>
+  <li>Some quadcopters seem to be happier with a PT1 while other quadcopters seem to prefer a BiQuad.</li>
+  <li>Gyro and dTerm LPF type can be set independently.</li>
+  <li>Generally the PT1 seems to produce less problems than the BiQuad, but in certain circumstances the BiQuad is better.</li>
+  <li>PT1 filters less and therefore has less latency.</li>
+  <li>PT1 may be more responsive.</li>
+  <li>dTerm PT1 may be less tolerant of high dTerm values and propeller damage.</li>
+  <li>BiQuad filters more thoroughly and therefore may have more latency.</li>
+  <li>BiQuad over-filtering could be a problem though and having to much of a good thing isn’t necessarily good for flying.</li>
+  <li>dTerm BiQuad may be more tolerant of high dTerm values and propeller damage.</li>
+</ul>
+
+<h3 id="should-i-use-1-or-2-dterm-lpfs">Should I use 1 or 2 dTerm LPF’s?</h3>
+<ul>
+  <li>Depends on your quad’s physical characteristics or if you use <a href="https://github.com/emuflight/EmuFlight/wiki/Matrix">Matrix</a> Filter.</li>
+</ul>
+
+<h3 id="notable-filtering-resources">Notable Filtering resources:</h3>
+<ul>
+  <li>https://oscarliang.com/betaflight-filtering/</li>
+  <li>https://github.com/betaflight/betaflight/wiki/Gyro-&amp;-Dterm-filtering-recommendations</li>
+  <li>https://www.propwashed.com/notch-filter-practical-guide/</li>
+</ul>
+
+<hr />
+<p>Although not precise, this image represents the basic idea of LPF tuning:</p>
+
+<p><img src="https://github.com/emuflight/EmuFlight/wiki/images/basic_theory.png" alt="Basic LPF Theory" /></p>
+
+<hr />
+
+<p>This example shows motor dTerm motor noise at a very low Hz. A fair dTerm LPF cutoff could be 85hz. Possibly, any value 70-90 may work.  90 may offer best control and prop-wash handling at the cost of a little heat. If propellers get bent, then motors could potentially get too warm.  Lower of 70 may offer heat protection, but at the cost of poor prop-wash handling.  Tuning is always a cost/benefit analysis.  Here this low Hz is not typical, but only used as an example:</p>
+
+<p><img src="https://github.com/emuflight/EmuFlight/wiki/images/lowHz_motor_example.png" alt="Low Hz Motor Noise Example" /></p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

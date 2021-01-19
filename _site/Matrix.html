@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Matrix gyro Filter | EmuFlight</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Matrix gyro Filter" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/Matrix.html" />
+<meta property="og:url" content="http://localhost:4000/Matrix.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/Matrix.html","headline":"Matrix gyro Filter","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h2 id="matrix-gyro-filter">Matrix gyro Filter</h2>
+<ul>
+  <li>The gyro Dynamic_Filter in EmuFlight 0.3.X (a.k.a. Matrix) is a per-axis dynamic gyro notch written by <a href="https://www.youtube.com/c/Pawe%C5%82Spychalski/search?query=matrix%20filter">Paweł Spychalski</a>.</li>
+</ul>
+
+<h3 id="tuning">Tuning</h3>
+<ul>
+  <li>EmuFlight stock defaults are fair for a 5” standard-frame quadcopter, but generally over-filter.</li>
+  <li>Defaults have Matrix enabled as well as 2 dTerm LPF’s, which again may be overfiltering. (Helio is disabled by default.)</li>
+  <li>The goal of filter tuning is to have a quad-specific tune that is neither over-filtered nor under-filtered.</li>
+</ul>
+
+<h3 id="many-options-03x">Many options (0.3.X)</h3>
+<ul>
+  <li>Often it is found that with Matrix enabled, only one dTerm LPF is required.</li>
+  <li>Often it is found that with Matrix disabled, two dTerm LPF’s are required. (But this may vary, especially on Helio/Strix.)</li>
+  <li>Matrix may placed over the motor-noise spikes to remove dTerm noise from gyro; However,</li>
+  <li>Matrix may also be placed above motor-noise spike to clean-up only high frequency noise.</li>
+</ul>
+
+<h3 id="variables-and-values">Variables and Values</h3>
+<ul>
+  <li>Matrix Q (<code class="language-plaintext highlighter-rouge">dynamic_gyro_notch_q</code>) is the width of the dynamic per-axis notches. Higher value is a narrower notch, while smaller values are a wider notch. Range: 1-1000. Default: <code class="language-plaintext highlighter-rouge">300</code>.</li>
+  <li>Smaller values (wider notches) are more latent than larger values (narrower notches).</li>
+  <li>Matrix Min (<code class="language-plaintext highlighter-rouge">dynamic_gyro_notch_min_hz</code>) is the lowest value that a notch’s cutoff may exist. Range: 30-1000. Default: <code class="language-plaintext highlighter-rouge">150</code>.</li>
+  <li>Matrix Max (<code class="language-plaintext highlighter-rouge">dynamic_gyro_notch_max_hz</code>) [0.3.2+ / CLI only] is the highest value that a cutoff may exist. Range: 600-1000. Default: <code class="language-plaintext highlighter-rouge">600</code>.</li>
+</ul>
+
+<hr />
+<p><img src="/images/Screenshot_Matrix.jpg" alt="Paweł Spychalski matrix Screenshot" /></p>
+<ul>
+  <li>Matrix Introduction, by Paweł: https://youtu.be/7s8ZeP135uI</li>
+  <li>How it Works, by Paweł: https://youtu.be/w0QsVIXYWCE</li>
+</ul>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

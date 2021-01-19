@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>EmuFlight | [“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="EmuFlight" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/Sharpness.html" />
+<meta property="og:url" content="http://localhost:4000/Sharpness.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/Sharpness.html","headline":"EmuFlight","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <p>In essence, increasing <code class="language-plaintext highlighter-rouge">sharpness</code> makes the filter more dynamic which will lead to less filtering. It reduces over-filtering.</p>
+
+<p>More technically, <code class="language-plaintext highlighter-rouge">sharpness</code> effects how much of a dynamic multiplier gets added to the base filtering value. For example, considering IMUF/Gyro LPF’s, at say 50hz it doesn’t have to do as much to increase your filtering frequency as it does at 10hz. At 10hz it needs to boost that base filter a ton more to give you more snappy feels and better propwash handling. But that lower base helps by in a sense overfiltering when it isn’t a problem and then filtering less when overfiltering would be a problem.</p>
+
+<p>Generally it’s a good idea to turn Sharpness off while trying to tune. Such will allow you to tune Q without additional dynamic behavior..  That said, depending on which non-Helio release/build or Helio IMUF Binary, there may differing way of turning sharpness off or “near” off</p>
+<ul>
+  <li>0.3.2+ non-Helio: <code class="language-plaintext highlighter-rouge">set sharpness = 0</code></li>
+  <li>0.3.2+ Helio IMUF 250: <code class="language-plaintext highlighter-rouge">set sharpness = 0</code></li>
+  <li>0.3.2+ Helio IMUF 230, 231: <code class="language-plaintext highlighter-rouge">set sharpness = 250</code> or <code class="language-plaintext highlighter-rouge">set sharpness = 1</code> *debatable which is best – see additional info near bottom.</li>
+  <li>0.3.1 non-Helio:  <code class="language-plaintext highlighter-rouge">set sharpness = 250</code> or <code class="language-plaintext highlighter-rouge">set sharpness = 1</code> *debatable – see additional info near bottom.</li>
+</ul>
+
+<p>Once a good Q range is estimated, then one could introduce sharpness.  As more sharpness is introduced, Q should be reduced.</p>
+
+<p>Generally, but not always, a few good options are:
+ 1) Sharpness off; only tune Q.
+ 2) very-low Q; medium-high Sharpness.
+ 3) high Q; very-low Sharpness.</p>
+
+<p>Generally, you do not want high Q with high Sharpness – i.e. Although good to not over-filter, you also don’t want to ultra-Under-Filter.</p>
+
+<hr />
+
+<p><strong>Additional Information</strong></p>
+<ul>
+  <li>For 0.3.1 and Helio IMUF 230,231 sharpness was simply something like thus:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">filter</span><span class="o">-&gt;</span><span class="n">s</span> <span class="o">=</span> <span class="n">gyroConfig</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">imuf_sharpness</span> <span class="o">/</span> <span class="mi">250</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">;</span>  
+<span class="p">[...]</span>
+	<span class="kt">float</span> <span class="n">errorMultiplier</span> <span class="o">=</span> <span class="n">fabsf</span><span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>However in 0.3.2+ and IMUF 250, sharpness is more complex, something like:</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[...]</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">s</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">)</span> <span class="p">{</span>               <span class="c1">//if sharpness non-zero</span>
+    <span class="kt">float</span> <span class="n">average</span> <span class="o">=</span> <span class="n">fabsf</span><span class="p">(</span><span class="n">target</span> <span class="o">+</span> <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">lastX</span><span class="p">)</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="n">f</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">average</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">float</span> <span class="n">error</span> <span class="o">=</span> <span class="n">fabsf</span><span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">lastX</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="n">ratio</span> <span class="o">=</span> <span class="n">error</span> <span class="o">/</span> <span class="n">average</span><span class="p">;</span>
+        <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">e</span> <span class="o">=</span> <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">s</span> <span class="o">*</span> <span class="n">powf</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="mi">3</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>  <span class="c1">//"ratio" power 3 and multiply by a gain (sharpness)</span>
+    <span class="p">}</span>
+    <span class="c1">//prediction update</span>
+    <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">p</span> <span class="o">=</span> <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">p</span> <span class="o">+</span> <span class="p">(</span><span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">q</span> <span class="o">+</span> <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">e</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>          <span class="c1">//if sharpness zero (off)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">lastX</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">e</span> <span class="o">=</span> <span class="n">fabsf</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span> <span class="o">-</span> <span class="p">(</span><span class="n">target</span> <span class="o">/</span> <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">lastX</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="c1">//prediction update</span>
+    <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">p</span> <span class="o">=</span> <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">p</span> <span class="o">+</span> <span class="p">(</span><span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">q</span> <span class="o">*</span> <span class="n">kalmanState</span><span class="o">-&gt;</span><span class="n">e</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">[...]</span>
+</code></pre></div></div>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

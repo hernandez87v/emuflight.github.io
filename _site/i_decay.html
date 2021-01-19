@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>What is i_decay? | EmuFlight</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="What is i_decay?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/i_decay.html" />
+<meta property="og:url" content="http://localhost:4000/i_decay.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/i_decay.html","headline":"What is i_decay?","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3 id="what-is-i_decay">What is i_decay?</h3>
+<p>EmuFlight has a tuning parameter called i_decay. i_decay is a powerful tool for reducing iterm windup and bounceback at the end of quick flips and rolls. Increasing i_decay means that you can run a higher i without many of the negatives associated with a high i.</p>
+
+<h3 id="how-does-it-work">How does it work?</h3>
+<p>i_decay works by taking the iterm windup which is normally accumulated during sharp moves and increases how quickly it shrinks. By increasing your i_decay you are literally increasing how quickly the iterm would naturally decrease after a windup. An i_decay of 1 actually turns off the functionality of the i_decay. An i_decay of 2 make the decrease in the iterm twice as fast while an i_decay of 5 makes the iterm decrease 5 times as fast as it normally would.</p>
+
+<p><strong><em>@Skylion Tip:</em></strong> When tuning I_decay I usually start at 5 and do a bunch of fast flips and rolls. You’ll want to particularly pay attention the the end of the flips/rolls and how your quad catches itself, if your getting bounce back or other unstable movements then raise it by 1 till you see that go away. I like I_decay set to 7 on micros and 8 on 5”+.</p>
+
+<h3 id="idecay-v2-032">iDecay v2 (0.3.2+)</h3>
+<p>adds <code class="language-plaintext highlighter-rouge">i_decay_cutoff</code> where default is <code class="language-plaintext highlighter-rouge">200</code> (20.0%) threshold of iterm accumulation before full iDecay strength is applied. When iterm accumulation is below the cutoff value the iDecay strength shrinks linearly until iterm is 0, at which point iDecay has no more effect. This was added as testing showed that iterm was able to create slow wobbles in forward flight and other situations when iDecay was too aggressive. This change allows the quicker shrinking of iterm accumulation while preventing iterm from “bouncing” around 0% accumulation. This change means you may prefer a higher iDecay value then previously. Do you want to change the cutoff? Probably not, from our testing every user was happy with the cutoff at 200 and found that to work quite well, as such that is the default and because this works so well we have no plans to add this into the configurator and will remain a cli only setting. But feel free to play with things!</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

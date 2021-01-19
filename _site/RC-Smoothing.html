@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>RC Smoothing | EmuFlight</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="RC Smoothing" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/RC-Smoothing.html" />
+<meta property="og:url" content="http://localhost:4000/RC-Smoothing.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/RC-Smoothing.html","headline":"RC Smoothing","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3 id="rc-smoothing">RC Smoothing</h3>
+<p>RC Smoothing is a personal preference and may be specific to components used.  RC Smoothing is CPU intensive. Generally, BiQuad is smoother at cost of minor delay and PT1 faster at cost of minor less smoothness.</p>
+
+<p><strong><em>@3dracingman Tip:</em></strong> Racers should leave RC Smoothing defaults.  For freestylers, if not using BBL to analyze RC Command, then Interpolation is a good start.  I have spent many hours of testing and concluded the following personal preference:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set rc_interp_ch = RPYT
+set rc_smoothing_type = FILTER
+set rc_smoothing_input_hz = 50
+set rc_smoothing_derivative_hz = 75
+set rc_smoothing_input_type = BIQUAD
+set rc_smoothing_derivative_type = BIQUAD
+</code></pre></div></div>
+
+<p><strong><em>@Skylion Tip:</em></strong> I use the following on every quad for Crossfire, but the 55hz input is subjective – up to 65 for a larger quad, or down to 45 for a micro.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set rc_interp_ch = RPYT
+set rc_smoothing_type = FILTER
+set rc_smoothing_input_hz = 55
+set rc_smoothing_derivative_hz = 100
+set rc_smoothing_input_type = PT1
+set rc_smoothing_derivative_type = PT1
+</code></pre></div></div>
+
+<p><strong><em>@Ian444 Tip:</em></strong> [Interpolation] 19mS works too, I stayed at 21mS for a bit of margin.
+Under 19mS gets rough. That’s with [FrSky SBUS] D8. I think D16 same, not sure.</p>
+
+<hr />
+
+<p>Many online resources also recommend disabling the ADC Filter in OpenTX <img src="https://github.com/emuflight/EmuFlight/wiki/images/disable-ADC.png" alt="Disable ADC Filter" /></p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>init emuflight.github.io | EmuFlight</title>
+<title>EmuFlight | [“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="init emuflight.github.io" />
+<meta property="og:title" content="EmuFlight" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
 <meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/Building.html" />
+<meta property="og:url" content="http://localhost:4000/Building.html" />
 <meta property="og:site_name" content="EmuFlight" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","headline":"init emuflight.github.io","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","name":"EmuFlight","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"http://localhost:4000/Building.html","headline":"EmuFlight","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -43,8 +43,26 @@
 
     <div class="container">
       <section id="main_content">
-        <h1 id="init-emuflightgithubio">init emuflight.github.io</h1>
-<p>EmuFlight</p>
+        <p>Although building is possible on any platform, here is the Debian/Ubuntu method.</p>
+
+<p>one time:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install git build-essential
+git clone https://github.com/emuflight/EmuFlight.git
+</code></pre></div></div>
+
+<p>build:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd EmuFlight
+
+#on occasion when arm_sdk changes:
+make arm_sdk_install --always-make
+
+#build targets (single, list, or all):
+make HELIOSPRING FOXEERF405 MATEKF722
+
+# make all --keep-going
+</code></pre></div></div>
+
+<p>Note: this works with <code class="language-plaintext highlighter-rouge">git checkout [branch or commit]</code> also.</p>
 
       </section>
     </div>

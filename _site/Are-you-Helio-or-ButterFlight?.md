@@ -1,0 +1,5 @@
+### Origins of EmuFlight
+EmuFlight was created the summer of 2019 when Marinus decided to start working on updating the IMUF code which was opensourced by HelioRC. After creating a few updates to the IMUF a version of the IMUF was put into a fork of Butterflight. The project had no name for some time until a poll was created and voted on by users of this code. The name that won the vote was EmuFlight and the iconic blue bird was born! Since then EmuFlight has added much more to its code than just the IMUF filter. 
+
+### Are you Helio/ButterFlight?
+Helio is dead. ButterFlight is dead. EmuFlight is not Butterflight or Helio. In fact EmuFlight is a new team of developers that include none of the old Helio or Butterflight devlopers. We do not want to be thought of as Helio or Butterflight. We do not want to cause drama in the drone community. We are only here to help you have a better time flying your quadcopter. That being said if you were a fan of Helio or Butterflight then you will probably be a fan of EmuFlight. 

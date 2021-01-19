@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>EmuBoost | EmuFlight</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="EmuBoost" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/Emu-Boost.html" />
+<meta property="og:url" content="http://localhost:4000/Emu-Boost.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/Emu-Boost.html","headline":"EmuBoost","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3 id="emuboost">EmuBoost</h3>
+<p>EmuBoost is similar to FeedForward in that it changes your stick feel. One way that EmuBoost has been described is a more organic feeling FeedForward.</p>
+
+<p>0.1.0: EmuBoost has one huge advantage to FeedForward. While FeedForward causes issues when paired with Feathered PIDs EmuBoost is quite happy being run with Feathered PIDs. This is something that many racing pilots are appreciative of.</p>
+
+<p>0.2.0+: EmuBoost and FeedForward now work together graciously since we now have a combined PID controller.</p>
+
+<p>0.3.0+: Feed Forward was removed completely.</p>
+
+<h3 id="how-does-emuboost-work">How does EmuBoost work?</h3>
+<p>EmuBoost is a boost to the error used in calculating your pterm and iterm. This means that your moves will be more aggressive when running a high EmuBoost. Small craft like whoops are quite happy running an EmuBoost of almost 1000!</p>
+
+<h3 id="boost-limit">Boost Limit</h3>
+<p>The Boost Limit puts a limit on the EmuBoost which prevents the boost from becoming to aggressive and causing oscillations. The lower that the boost limit is the lower that the EmuBoost is allowed to grow to.</p>
+
+<h3 id="tuning-emuboostboost-limit">Tuning EmuBoost/Boost Limit</h3>
+<p>EmuBoost is simply used for stick feel. If you would like a sharper response you can work at increasing your EmuBoost. If you run a large EmuBoost with a small Boost Limit the sticks will be very sharp at the start of movement changes. Stick feel from EmuBoost is a balance of EmuBoost and Boost Limit. An EmuBoost that is high with a Boost Limit that is high can cause oscillations. If EmuBoost is giving you oscillations lowering your Boost Limit will probably remove those oscillations.</p>
+
+<p>Tiny Whoops are usually happy running a EmuBoost of almost 1000 with a Boost Limit of 200 or more. This can really help lock in the sticks on a tiny whoop.</p>
+
+<h3 id="dboost">DBoost</h3>
+<p>DBoost/Limit is essentially the same, but is a boost to the error used in calculating your dterm.  Defaults of 0 are off.  Enabling this will be a personal preference and tuning may require lower dTerms and feathered-PIDs adjustments.  If feathered-PID are &lt;= 70, DBoost may induce dTerm kick or jello.</p>
+
+<p><strong><em>@ehitaja &amp; @3dracingman Tip (0.2.0+):</em></strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set feedforward_transition = 70
+set emu_boost = 155
+set emu_boost_limit = 30
+set emu_boost_yaw = 330
+set emu_boost_limit_yaw = 83
+set f_pitch = 30
+set f_roll = 30
+set f_yaw = 20
+</code></pre></div></div>
+
+<p>However, many @EmuTestBandits were enjoying a prior recommendation of:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set emu_boost = 90
+set emu_boost_limit = 90
+set emu_boost_yaw = 40
+set emu_boost_limit_yaw = 40
+set f_pitch = 35
+set f_roll = 35
+set f_yaw = 35
+</code></pre></div></div>
+
+<p><strong><em>@nerdCopter Tip (0.2.0+):</em></strong> As a less experienced freestyle pilot, I find high FF/Boost values a bit unbridled. Using an X-Lite controller, I prefer low RC-Rates in conjunction with Expo.  Having higher FF/Boost values seems to unsettle this and produce too quick of a response when moving sticks off center.  I prefer a smooth and subtle change.  For me, higher values also make it easier to overshoot my end of roll/flip target.  So for now I’m choosing Low FF/Boost values.  Also notice that many popular presets have zero FF/Boosts.</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

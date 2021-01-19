@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>IMUF Tuning | EmuFlight</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="IMUF Tuning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/IMUF.html" />
+<meta property="og:url" content="http://localhost:4000/IMUF.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/IMUF.html","headline":"IMUF Tuning","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3 id="imuf-tuning">IMUF Tuning</h3>
+
+<h2 id="q">Q</h2>
+<p>Think of Q as “Trust”. The more you “trust” the gyro measurement, the less filtering will be applied. Q values are “elastic”. The defaults (3000) are now baseline values. This will predictably change based on conditions during flight. This results in a much more responsive and connected feel. This also reduces the potential for MTO, and other unwanted flight characteristics. In some instances MTO can be created from having a Q value which is to low. In those instances increases Q will help with MTO.</p>
+
+<p><strong><em>@Skylion tip:</em></strong> I generally start with Q around 5000-6000 and start raising Q by 500 at a time till it starts to “feel bad” or till you notice something weird (yaw twitches, bobbles, over shooting, etc). The idea is the higher you can raise q the less filtering there will be on your gyro which makes the quad feel more “locked in”. If your quad starts feel like it’s less in your control after you’ve just raised q then lower it back down by 500. Another method is to just raise it till it feels like there is no delay between your stick movements and how the quad reacts then leave it there. I’ve seen most people use anywhere from 5000-9000 successfully, 16000 is the maximum.</p>
+
+<p><strong><em>@Pierre Meunier tip:</em></strong>  Larger quads tend to use Q’s on the low-end of the value range, while smaller quads tend to use higher values.  E.g. 7”: 4000±  5”: 6000±</p>
+
+<p><strong><em>@nerdCopter tip:</em></strong>  Clean gyros and clean builds tend to use higher Q’s, but noisy builds or bad gyros tend to need lower Q values.  Helio/Strix can use higher Q’s out of the box just due to it’s excellent filtering capability. E.g 6000±/7000±.</p>
+
+<h2 id="sharpness-03x">Sharpness (0.3.X+)</h2>
+<p>EmuFlight has also introduced Sharpness to reduce over-filtering.  Please see the <a href="https://github.com/emuflight/EmuFlight/wiki/Sharpness">Sharpness</a> article as it has direct affect on Q.</p>
+
+<h2 id="w">W</h2>
+<p>W is the amount of gyro readings which the IMUF filter looks at to determine its filter. Lower W gives a sharper stick feel. Larger craft prefer a higher W value. Increasing W does not increase delay in the filter, instead it just increases the window of gyro readings from the past that the filter looks at to make its calculations. The default for a typical 5” quadcopter is 32. Generally, racers may prefer a lower W while freestylers may prefer a larger W. While a lower W may reduce smoothness, it may also assist in cutting through heavy winds – consider using profiles for low-wind vs high-wind days.</p>
+
+<p><strong><em>@nerdCopter tip:</em></strong>  Learning from others, it’s now common knowledge that smaller quads prefer lower W and larger quads prefer larger W.  <code class="language-plaintext highlighter-rouge">imuf_w=32</code> is good default for 5”, while for 6” i personally use <code class="language-plaintext highlighter-rouge">64</code> and 7” i use <code class="language-plaintext highlighter-rouge">128</code>.  @3Dracingman suggested <code class="language-plaintext highlighter-rouge">10</code> for whoops. We tend to use values divisible by 8, but there is no hard-rule. You could use any value and range as desired. Increasing W also assists with smoothing out nose dips on throttle blip.</p>
+
+<p><strong><em>@Skylion Tip:</em></strong> W seems to have more of a correlation to the size of your craft and the style of your flying than anything. So for example if your tuning a tiny whoop/toothpick/micro2”-3” your W will feel good anywhere between 16-48, 4”-6” can be happy anywhere between 16-64, 7”+ tend to be happy from 64-256, X-Class will like 300+, the bigger the props the higher the W. Also if you’re racing you will probably prefer a lower W than if your freestyling. Also I’ve found that W likes to be set to a multiple of 8 but I highly suggest going back and forth and choosing the W setting that flies best for you.</p>
+
+<h2 id="tuning-flowchart">Tuning Flowchart</h2>
+<p>Use the following Flowchart for basic PID tuning.  Start by disabling Dynamic-Filter, TPA, Anti-Gravity, SPA, EmuBoost, Sharpness &amp; for older versions, FeedForward while achieving a good tune.  Then re-enable or modify features as needed for further fine-tuning.</p>
+
+<p><img src="https://github.com/emuflight/EmuFlight/wiki/images/EmuFlight-Tuning.jpg" alt="Tuning" /></p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

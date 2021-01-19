@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>init emuflight.github.io | EmuFlight</title>
+<title>SPA | EmuFlight</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="init emuflight.github.io" />
+<meta property="og:title" content="SPA" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
 <meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/SPA.html" />
+<meta property="og:url" content="http://localhost:4000/SPA.html" />
 <meta property="og:site_name" content="EmuFlight" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","headline":"init emuflight.github.io","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","name":"EmuFlight","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"http://localhost:4000/SPA.html","headline":"SPA","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -43,8 +43,21 @@
 
     <div class="container">
       <section id="main_content">
-        <h1 id="init-emuflightgithubio">init emuflight.github.io</h1>
-<p>EmuFlight</p>
+        <h3 id="spa">SPA</h3>
+<p>In EmuFlight 0.2.0 and above, we now have SPA Rates (Stick Position Attenuation).</p>
+
+<p>The values will multiply against the P, I, or D (whichever you set). At full-stick deflection the values will be maximum but will be less at mid-stick deflection.</p>
+
+<p>examples:</p>
+<ul>
+  <li>100 equals 100% (i.e. no change)</li>
+  <li>65 equals 65% at full-stick deflection</li>
+  <li>125 equals 125% at full-stick deflection</li>
+</ul>
+
+<p>The big quads are using it to add a bunch of D at full-stick deflection to mimic Min_D/Max_D. (ex. Low Roll/Pitch D &amp; SPA_D = 120)</p>
+
+<p>Or for whoops, SPA can be used to have extremely high I_term on yaw which can be significantly softened in turns. (ex. Yaw I_Term 120 and Yaw SPA_I 20)</p>
 
       </section>
     </div>

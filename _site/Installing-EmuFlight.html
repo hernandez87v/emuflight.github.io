@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=67b2b1a365f440243608024717b4c77a6f825cdc">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>How to install EmuFlight firmware on your FC: | EmuFlight</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="How to install EmuFlight firmware on your FC:" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<meta property="og:description" content="[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]" />
+<link rel="canonical" href="http://localhost:4000/Installing-EmuFlight.html" />
+<meta property="og:url" content="http://localhost:4000/Installing-EmuFlight.html" />
+<meta property="og:site_name" content="EmuFlight" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/Installing-EmuFlight.html","headline":"How to install EmuFlight firmware on your FC:","description":"[“EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR’s welcome!”]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>EmuFlight</h1>
+        </a>
+        <h2>EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!</h2>
+
+        <section id="downloads">
+          
+            <a href="https://github.com/hernandez87v/emuflight.github.io/zipball/gh-pages" class="btn">Download as .zip</a>
+            <a href="https://github.com/hernandez87v/emuflight.github.io/tarball/gh-pages" class="btn">Download as .tar.gz</a>
+          
+          <a href="https://github.com/hernandez87v/emuflight.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="how-to-install-emuflight-firmware-on-your-fc">How to install EmuFlight firmware on your FC:</h1>
+
+<p>Using <a href="https://github.com/emuflight/EmuConfigurator/releases">EmuFlight Configurator</a>, select the Firmware Flasher tab and select what firmware to flash in one of two different ways, online or local firmware.</p>
+<ol>
+  <li>Load online firmware.
+Select Target and Version in the upper left corner. Press “Load Firmware [Online]”, lower right part of the screen.</li>
+  <li>Load local firmware.
+ Press the “Load firmware [Local]” button, you can now browse to the folder you have the local EmuFlight firmware file. Select the correct firmware hex-file matching your Flight Controller.</li>
+</ol>
+
+<p><img src="https://github.com/emuflight/emuflight/blob/master/docs/assets/images/emuconfig.png" alt="" /></p>
+
+<p>It is recommended to always save <code class="language-plaintext highlighter-rouge">diff all</code> files of your flight controller settings, especially when upgrading between versions.  It is recommended to “Erase Flash” between major versions to avoid incompatible parameter values and to avoid CLI lock-up during the initial auto-complete cache building.</p>
+
+<p>Choose your firmware, then press “Flash Firmware”.  The Configuration tool should now erase the target and flash the selected firmware to your Flight controller. All this assumes you have the correct drivers etc setup correctly, read further on for details.</p>
+
+<p>Pre-Release firmware may be found by enabling <code class="language-plaintext highlighter-rouge">Show unstable releases</code> and selecting <code class="language-plaintext highlighter-rouge">Release And Release Candidate</code>.</p>
+
+<p><img src="https://github.com/emuflight/EmuFlight/wiki/images/show_unstable.png" alt="" /></p>
+
+<h2 id="helio-springstrix-f10mode2-flux">Helio-Spring/Strix-F10/Mode2-Flux</h2>
+
+<p>A extra few steps are needed in the case of the Helio Spring and Strix F10 boards after flashing the firmware in the steps above.</p>
+
+<ol>
+  <li>Download The <a href="https://github.com/emuflight/imu-f/releases/download/209/HELIO-IMU-F-Updater.zip">IMU-F Updater Tool</a> and extract the contents of the zip file to your computer.</li>
+  <li>Open the .exe file</li>
+  <li>Type or select COM port and hit Connect, you should be presented with information on the board and IMU-F version.</li>
+</ol>
+
+<p><img src="https://github.com/emuflight/EmuFlight-Butter-Varient/blob/master/docs/assets/images/imuf_flashing_3.png" alt="" /></p>
+
+<ol>
+  <li>Download an appropriate <a href="https://github.com/emuflight/imu-f/releases">IMU-F firmware</a> then hit Select firmware.  Note: Development versions up to 0.2.31 inclusive can use any IMUF up to 224 inclusive.  Dev 0.2.32 and above including soon to be released 0.3.0 will need a newer IMUF for the new <code class="language-plaintext highlighter-rouge">sharpness</code> variable.</li>
+</ol>
+
+<p><img src="https://github.com/emuflight/EmuFlight-Butter-Varient/blob/master/docs/assets/images/imuf_flashing_4.png" alt="" /></p>
+
+<ol>
+  <li>Leave ‘Original HELIO Firmware’ unchecked and hit Flash Firmware. Note: Older HelioRC® provided IMUF firmware requires the checkbox enabled; whereas EmuFlight™ provided IMUF firmware require the checkbox disabled.  If for any reason you flash in the wrong mode, you must re-plug and power your FC and wait a full 5 minutes to re-flash it properly. Do not worry, it is not bricked; just wait for the timeout.</li>
+</ol>
+
+<p><img src="https://github.com/emuflight/EmuFlight-Butter-Varient/blob/master/docs/assets/images/imuf_flashing_5.png" alt="" /></p>
+
+<ol>
+  <li>You should be presented with the status text on the left updating. Wait until this is finished and a prompt will appear stating that you have been disconnected from the port. Hit OK and the Updater will close automatically.</li>
+</ol>
+
+<p><img src="https://github.com/emuflight/EmuFlight-Butter-Varient/blob/master/docs/assets/images/imuf_flashing_6.png" alt="" /></p>
+
+<p><strong>Congratulations! You have updated your IMU-F firmware</strong></p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p><strong>If you are having trouble connecting to your flight controller, please take a look at this video:</strong></p>
+
+<p><a href="https://www.youtube.com/watch?v=m4ygG6Y5zXI"><img src="https://img.youtube.com/vi/m4ygG6Y5zXI/0.jpg" alt="" /></a></p>
+
+<p><em>In Progress</em></p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>
