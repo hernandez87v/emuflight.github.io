@@ -15,7 +15,8 @@ layout: home
 
 ## [](#header-2)News
 
-- New to EmuFlight and just want to get started? See the Installation Section.
+- New to EmuFlight and just want to get started? See the [Installation Section](https://github.com/emuflight/EmuFlight/wiki/Installing-EmuFlight).
+- Feature listing per firmware milestone are in the [What makes EmuFlight different?](https://github.com/emuflight/EmuFlight/wiki/What-makes-EmuFlight-different%3F) link.
 
 ### [](#header-3)Header 3
 
