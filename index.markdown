@@ -18,28 +18,16 @@ layout: home
 - New to EmuFlight and just want to get started? See the [Installation Section](https://github.com/emuflight/EmuFlight/wiki/Installing-EmuFlight).
 - Feature listing per firmware milestone are in the [What makes EmuFlight different?](https://github.com/emuflight/EmuFlight/wiki/What-makes-EmuFlight-different%3F) link.
 
-### [](#header-3)Header 3
+## [](#header-3)In-Flux Defaults
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l);
-  return true;
-};
-```
+Default settings as well as CLI commands have changed from one version to the next. We try to list these under the version Release-Notes. A recommended method to keep track of configurations and changes is:
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+- Save both a `diff all` and `dump all` from your quads before updating.
+- Save a `dump all` containing defaults for each freshly flashed EmuFlight version and save such with "defaults" in the filename.
 
-#### [](#header-4)Header 4 `with code not transformed`
+## [](#header-4)Firmware Releases
 
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-- This is an unordered list following a header.
+Releases can be found here: [github.com/emuflight/EmuFlight/releases](https://github.com/emuflight/EmuFlight/releases) or downloaded from [EmuConfigurator](https://github.com/emuflight/EmuConfigurator/releases). Recommended to always check Release-Notes and other Details on the various versions.
 
 ##### [](#header-5)Header 5
 
