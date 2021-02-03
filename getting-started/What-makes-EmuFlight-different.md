@@ -4,16 +4,6 @@ title: What makes EmuFlight different?
 parent: Getting Started
 nav_order: 2
 ---
-# What makes EmuFlight different?
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
 
 ### What makes EmuFlight different?
 EmuFlight is a fork of ButterFlight that has had many additions making it worthy of attention. Most notably is the addition of the Helio IMUF filtering on all flight controllers. With EmuFlight being a fork of ButterFlight, EmuFlight is quite similar to betaflight 3.5 except with many improvements making the switch to EmuFlight very worthwhile.
