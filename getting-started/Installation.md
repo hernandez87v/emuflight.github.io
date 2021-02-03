@@ -16,7 +16,7 @@ nav_order: 1
 
 ---
 
-# How to install EmuFlight firmware on your FC:
+## How to install EmuFlight firmware on your FC:
 
 Using [EmuFlight Configurator](https://github.com/emuflight/EmuConfigurator/releases), select the Firmware Flasher tab and select what firmware to flash in one of two different ways, online or local firmware.
   1. Load online firmware.
