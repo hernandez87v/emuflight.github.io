@@ -1,3 +1,12 @@
+---
+layout: default
+title: iTerm Relax
+parent: Features
+nav_order: 7
+---
+
+# iTerm Relax
+
 EmuFlight 0.3.2+ implements a simplified iTerm relax which is based only on setpoint and the `_INC` mode.
 
 `iterm_relax_cutoff` is the setting for both Roll and Pitch (RP). `set iterm_relax_cutoff_yaw` is the setting for Yaw (Y).
