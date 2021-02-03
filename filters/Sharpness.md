@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Sharpness
-parent: Features
-nav_order: 13
+parent: Filters
+nav_order: 3
 ---
 
 # Sharpness
