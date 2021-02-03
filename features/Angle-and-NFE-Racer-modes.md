@@ -16,6 +16,8 @@ nav_order: 1
 
 ---
 
+### Angle-Mode and NFE-Racer Mode
+
 ONLY IN 0.3.0 AND LATER
 
 Angle mode in EmuFlight has taken a lot of influence from SilverWare angle code. As such EmuFlight has advanced angle mode features only found in EmuFlight and SilverWare. 
