@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Filters
+title: Presets
 nav_order: 4
 has_children: true
-permalink: /features
+permalink: /presets
 ---
 
-# Features
+# Presets
