@@ -24,13 +24,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   EmuFlight provides the best flying experience by creating a healthy work environment for developers and pilots of racing and freestyle drones. PR's welcome!
 baseurl: '' # the subpath of your site, e.g. /blog
 url: '' # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username: jekyll
+# twitter_username: emuflight
+github_username: emuflight
 
 # Build settings
 # theme: minima
 theme: 'just-the-docs'
-color_scheme: emuflight
 plugins:
   - jekyll-feed
 # Exclude from processing.
@@ -53,7 +52,7 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 # Color scheme supports "light" (default) and "dark"
-color_scheme: dark
+color_scheme: emuflight
 # Set a path/url to a logo that will be displayed instead of the title
 logo: '/assets/images/emuflight-logo.png'
 
