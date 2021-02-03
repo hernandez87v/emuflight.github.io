@@ -6,6 +6,15 @@ nav_order: 4
 ---
 
 # Matrix
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 ## Matrix gyro Filter
 * The gyro Dynamic_Filter in EmuFlight 0.3.X (a.k.a. Matrix) is a per-axis dynamic gyro notch written by [Paweł Spychalski](https://www.youtube.com/c/Pawe%C5%82Spychalski/search?query=matrix%20filter).
@@ -28,6 +37,6 @@ nav_order: 4
 * Matrix Max (`dynamic_gyro_notch_max_hz`) [0.3.2+ / CLI only] is the highest value that a cutoff may exist. Range: 600-1000. Default: `600`.
 
 ***
-![Paweł Spychalski matrix Screenshot](images/Screenshot_Matrix.jpg)
-* Matrix Introduction, by Paweł: https://youtu.be/7s8ZeP135uI
-* How it Works, by Paweł: https://youtu.be/w0QsVIXYWCE
+![Paweł Spychalski matrix Screenshot](https://github.com/emuflight/EmuFlight/wiki/images/Screenshot_Matrix.jpg)
+* Matrix Introduction, by Paweł: [https://youtu.be/7s8ZeP135uI](https://youtu.be/7s8ZeP135uI)
+* How it Works, by Paweł: [https://youtu.be/w0QsVIXYWCE](https://youtu.be/w0QsVIXYWCE)
