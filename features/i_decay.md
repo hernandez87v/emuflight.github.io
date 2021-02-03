@@ -1,3 +1,21 @@
+---
+layout: default
+title: i_decay
+parent: Features
+nav_order: 6
+---
+
+# i_decay
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
 ### What is i_decay?
 EmuFlight has a tuning parameter called i_decay. i_decay is a powerful tool for reducing iterm windup and bounceback at the end of quick flips and rolls. Increasing i_decay means that you can run a higher i without many of the negatives associated with a high i.
 
