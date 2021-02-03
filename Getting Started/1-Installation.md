@@ -5,6 +5,17 @@ parent: Getting Started
 nav_order: 1
 ---
 
+# Installation
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
 # How to install EmuFlight firmware on your FC:
 
 Using [EmuFlight Configurator](https://github.com/emuflight/EmuConfigurator/releases), select the Firmware Flasher tab and select what firmware to flash in one of two different ways, online or local firmware.
