@@ -54,7 +54,7 @@ plugins:
 # Color scheme supports "light" (default) and "dark"
 color_scheme: emuflight
 # Set a path/url to a logo that will be displayed instead of the title
-logo: '/assets/images/emuflight-logo.png'
+logo: '/assets/artwork/emuflight-logo.png'
 
 # Aux links for the upper right navigation
 aux_links:

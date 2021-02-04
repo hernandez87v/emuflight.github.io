@@ -6,7 +6,7 @@ nav_order: 1
 
 # [](#header-1)Welcome to the EmuFlight Wiki
 
-![](assets/images/emuFlight-banner.png)
+![](/assets/artwork/EMUFLIGHT-LOGO_-01_SolidBlue.png)
 
 - EmuFlight flightcode has unique methods and characteristics.
 - Free Open-Source Software for racing and freestyle drones.
