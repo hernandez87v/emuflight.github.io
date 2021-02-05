@@ -30,6 +30,7 @@ github_username: emuflight
 # Build settings
 # theme: minima
 theme: 'just-the-docs'
+color_scheme: emuflight
 plugins:
   - jekyll-feed
 # Exclude from processing.
