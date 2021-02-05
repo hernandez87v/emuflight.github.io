@@ -61,8 +61,6 @@ logo: '/assets/artwork/emuflight-logo.png'
 aux_links:
   'Emuflight on GitHub':
     - '//github.com/emuflight'
-    'Emuflight Configurator':
-    - 'https://github.com/emuflight/EmuConfigurator/releases'
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: true
