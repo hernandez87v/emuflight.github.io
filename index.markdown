@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 ---
 
-# [](#header-1)Welcome to the EmuFlight Wiki
+# [](#header-1)Welcome to the EmuFlight Documentation
 
 
 ![](/assets/artwork/EMUFLIGHT-LOGO_-01_SolidBlue.png)
@@ -15,8 +15,8 @@ nav_order: 1
 
 ## [](#header-2)News
 
-- New to EmuFlight and just want to get started? See the [Installation Section](https://github.com/emuflight/EmuFlight/wiki/Installing-EmuFlight).
-- Feature listing per firmware milestone are in the [What makes EmuFlight different?](https://github.com/emuflight/EmuFlight/wiki/What-makes-EmuFlight-different%3F) link.
+- New to EmuFlight and just want to get started? See the [Installation Section](/getting-started/Installation.html).
+- Feature listing per firmware milestone are in the [What makes EmuFlight different?](/getting-started/What-makes-EmuFlight-different.html) link.
 
 ## [](#header-3)In-Flux Defaults
 
