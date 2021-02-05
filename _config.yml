@@ -60,7 +60,7 @@ logo: '/assets/artwork/emuflight-logo.png'
 # Aux links for the upper right navigation
 aux_links:
   'Emuflight on GitHub':
-    - '//github.com/emuflight'
+    - '//https://github.com/emuflight'
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: true
