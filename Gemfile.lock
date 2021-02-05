@@ -262,7 +262,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  github-pages (= 211)
+  github-pages
   jekyll-feed (~> 0.12)
   just-the-docs
   tzinfo (~> 1.2)
