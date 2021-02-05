@@ -15,3 +15,9 @@ git clone git@github.com:emuflight/emuflight.github.io.git
 cd emuflight.github.io
 bundle install
 bundle exec jekyll serve
+```
+Once changes are ready to go live to the IO site run: 
+
+```
+bundle update github-pages
+```
