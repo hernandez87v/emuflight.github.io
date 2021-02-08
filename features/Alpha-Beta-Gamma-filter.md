@@ -20,4 +20,3 @@ on Gyro:
 * `gyro_abg_alpha` (OSD: GYRO ABG ALPHA) Range 0-1000, default 0 (ABG Gyro off)
 * `gyro_abg_boost` (OSD: GYRO ABG BOOST) Range 0-2000, default 275
 * `gyro_abg_half_life` (OSD: GYRO ABG HL) Range 0-10000, default 50
-

@@ -116,5 +116,3 @@ Thank you @CesiumSalami for help and feedback of this Documentation.
 * LQ Widget Styles: https://youtu.be/VrY6zT1yY-s
 * LQ, SNR, TX-Power, & RSSI dBm widget config via OSD: https://youtu.be/CVroHVWUAcQ
 * Same, plus LQ Style config via OSD [not released]: https://youtu.be/7p1SK9HZSWk
-
-
