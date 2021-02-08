@@ -39,4 +39,4 @@ Here is a few other tools that may help in the process of installing EmuFlight:
 
 Zadig - [https://zadig.akeo.ie/](https://zadig.akeo.ie/)
 
-ImpulseRc Driver Fixer - [https://impulserc.blob.core.windows.net/utilities/ImpulseRC_Driver_Fixer.exe](https://impulserc.blob.core.windows.net/utilities/ImpulseRC_Driver_Fixer.exe)
+ImpulseRc Driver Fixer - [ImpulseRC_Driver_Fixer.exe](https://impulserc.blob.core.windows.net/utilities/ImpulseRC_Driver_Fixer.exe)
