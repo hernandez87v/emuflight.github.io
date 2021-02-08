@@ -215,7 +215,7 @@ Note: this works with `git checkout [branch or commit]` also.
 # Artwork
 
 ## EmuFlight Artwork
-All artwork is original works by and courtesy of [@kumokraft](https://www.youtube.com/user/kumokraft/videos)
+All artwork is original works by and courtesy of  [@kumokraft](https://www.youtube.com/user/kumokraft/videos){: .btn .btn-blue }
 
 [![](/assets/artwork/EMUFLIGHT-LOGO_YT-Header-01-01.png)](/assets/artwork/EMUFLIGHT-LOGO_YT-Header-01-01.png)
 [![](/assets/artwork/EMUFLIGHT-LOGO_YT-Backdrop-02.png)](/assets/artwork/EMUFLIGHT-LOGO_YT-Backdrop-02.png)
