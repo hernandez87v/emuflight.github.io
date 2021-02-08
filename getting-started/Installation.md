@@ -24,7 +24,7 @@ Select Target and Version in the upper left corner. Press "Load Firmware [Online
   2. Load local firmware.
  Press the "Load firmware [Local]" button, you can now browse to the folder you have the local EmuFlight firmware file. Select the correct firmware hex-file matching your Flight Controller.
 
-![](https://github.com/emuflight/emuflight/blob/master/docs/assets/images/emuconfig.png)
+![](/assets/images/emuconfig.png)
 
 It is recommended to always save `diff all` files of your flight controller settings, especially when upgrading between versions.  It is recommended to "Erase Flash" between major versions to avoid incompatible parameter values and to avoid CLI lock-up during the initial auto-complete cache building.
 
@@ -32,7 +32,7 @@ Choose your firmware, then press "Flash Firmware".  The Configuration tool shoul
 
 Pre-Release firmware may be found by enabling `Show unstable releases` and selecting `Release And Release Candidate`.
 
-![](https://github.com/emuflight/EmuFlight/wiki/images/show_unstable.png)
+![](/assets/images/show_unstable.png)
 
 ## Helio-Spring/Strix-F10/Mode2-Flux
 
