@@ -1,5 +1,7 @@
 # emuflight.github.io
 
+## Install Ruby and other [prerequisites](https://jekyllrb.com/docs/installation/#requirements):
+
 ```shell
 sudo apt-get install ruby-full build-essential zlib1g-dev
 
