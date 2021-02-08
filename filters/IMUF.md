@@ -42,4 +42,4 @@ W is the amount of gyro readings which the IMUF filter looks at to determine its
 ## Tuning Flowchart
 Use the following Flowchart for basic PID tuning.  Start by disabling Dynamic-Filter, TPA, Anti-Gravity, SPA, EmuBoost, Sharpness & for older versions, FeedForward while achieving a good tune.  Then re-enable or modify features as needed for further fine-tuning.
 
-![Tuning](https://github.com/emuflight/EmuFlight/wiki/images/EmuFlight-Tuning.jpg)
+![Tuning](/assets/images/EmuFlight-Tuning.jpg)
