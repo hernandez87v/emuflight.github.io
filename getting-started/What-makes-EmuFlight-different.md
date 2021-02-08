@@ -55,12 +55,12 @@ EmuFlight is a fork of ButterFlight that has had many additions making it worthy
 * CRSF LQ display
 
 **0.3.3+**
-* [Mix Roll and Yaw](https://github.com/emuflight/EmuFlight/wiki/Angle-and-NFE-Racer-modes#mix-roll-and-yaw) (a.k.a Dual Axis Steering) 
+* [Mix Roll and Yaw](/features/Angle-and-NFE-Racer-modes.html#mix-roll-and-yaw) (a.k.a Dual Axis Steering) 
 * NFE on an aux-mode switch.
 * `set show_altered_rc = ON` in order to see what your RC looks like (in Configurator).
 * Make rateDynamics feel the same irregardless of RX rate
 * Immersion RC Ghost protocol
-* [VTX power on an aux-mode switch](https://github.com/emuflight/EmuFlight/wiki/VTX-Power-on-switch) (CLI only)
+* [VTX power on an aux-mode switch](/Faq%20and%20Issues.html#vtx-power-on-an-aux-mode-switch) (CLI only)
 * Ability to turn off Kalman prediction, but why would you want to? `set imuf_w = ` <= `2` to see why Kalman is better.
 * LQ widget style selection in OSD.
 * Added CRSF style `SCALE` for 170-300, and `SIMPLE` for 0-100 (a.k.a `100 for Days`)
