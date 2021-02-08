@@ -34,7 +34,7 @@ nav_order: 1
 * dTerm BiQuad may be more tolerant of high dTerm values and propeller damage.
 
 ### Should I use 1 or 2 dTerm LPF's?
-* Depends on your quad's physical characteristics or if you use [Matrix](https://github.com/emuflight/EmuFlight/wiki/Matrix) Filter.
+* Depends on your quad's physical characteristics or if you use [Matrix](/filters/Matrix.html) Filter.
 
 ### Notable Filtering resources:
  - https://oscarliang.com/betaflight-filtering/
