@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 ---
 
-# [](#header-1)Welcome to the EmuFlight Documentation site
+# [](#header-1)Welcome to EmuFlight Documentation
 
 
 ![](/assets/artwork/EMUFLIGHT-LOGO_-01_SolidBlue.png)
