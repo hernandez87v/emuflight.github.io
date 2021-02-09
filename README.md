@@ -4,7 +4,7 @@ Website made using Github pages with Jekyll.
 
 Theme used: [Just-The-Docs](https://github.com/pmarsceill/just-the-docs)
 
-# Jekyll setup for Windows WSL or Linux: 
+## Jekyll setup for Windows WSL or Linux: 
 
 
 ### Install Ruby and other [prerequisites](https://jekyllrb.com/docs/installation/#requirements):
