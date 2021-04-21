@@ -10,7 +10,7 @@ nav_order: 1
 
 - EmuFlight flightcode has unique methods and characteristics.
 - Free Open-Source Software for racing and freestyle drones.
-- Provided under General Public License (GPL) for use and modification in any way and without Warranty of any kind.
+- Provided under General Public License (GPLv3) for use and modification in any way and without Warranty of any kind.
 
 ## [](#header-2)News
 
